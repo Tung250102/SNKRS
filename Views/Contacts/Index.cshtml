@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Contacts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    #map {
+        width: 100%;
+        height: 400px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .map-container {
+        margin-top: 20px;
+    }
+</style>
+
+@section jsFooter{
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3uE666HGL7se6cbbqiQJa68Wuk9NPyYY"></script>
+    <div id="map"></div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Khởi tạo bản đồ
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 10.832358, lng: 106.7559 }, // Tọa độ của địa chỉ cụ thể
+            zoom: 15 // Độ phóng to ban đầu
+        });
+
+        // Đặt đánh dấu (marker) tại vị trí cụ thể
+        var marker = new google.maps.Marker({
+            position: { lat: 10.832358, lng: 106.7559 },
+            map: map,
+            title: 'Địa chỉ cụ thể' // Tiêu đề khi người dùng di chuyển chuột qua marker
+        });
+    </script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 contact-info">
+            <h2>Thông tin liên hệ</h2>
+            <p>Địa chỉ: Trường Thọ, Thủ Đức, Tp.Hồ Chí Minh</p>
+            <p>SĐT: 098888888</p>
+            <p>Email: pttu1206@gmail.com</p>
+        </div>
+        <div class="col-md-6 map-container">
+            <h2>Bản đồ</h2>
+            <p>Địa điểm</p>
+            <div class="map" id="map"></div>
+        </div>
+    </div>
+</div>

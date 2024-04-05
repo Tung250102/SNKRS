@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "PaymentWithPaypal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.OrderId != null)
+{
+    <p>Đơn hàng của bạn có mã: @ViewBag.OrderId đã được đặt thành công. Cảm ơn bạn đã mua hàng!</p>
+}
+
+
